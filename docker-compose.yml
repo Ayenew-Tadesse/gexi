@@ -1,0 +1,15 @@
+# Optional: runs PostgreSQL for you. Start with:  docker compose up -d
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: gexi
+      POSTGRES_PASSWORD: gexi
+      POSTGRES_DB: gexi
+    ports:
+      - "5432:5432"
+    volumes:
+      - gexi-db:/var/lib/postgresql/data
+      - ./server/src/db/docker-init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  gexi-db:
