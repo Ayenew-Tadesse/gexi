@@ -1,5 +1,7 @@
 # Marketplace Build Plan (draft for approval)
 
+> **Status:** all six phases are built. See the README for how to run and try it, and for the few decisions that changed during the build.
+
 Pickup-only marketplace for Addis Ababa. This document covers the database, pages per role,
 API endpoints, and the build order. Nothing is built yet. The plan waits for your approval.
 

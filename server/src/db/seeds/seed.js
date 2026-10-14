@@ -83,10 +83,10 @@ async function placeholderImage(title, color) {
   const lines = [];
   for (const w of words) {
     const last = lines[lines.length - 1];
-    if (last && (last + ' ' + w).length <= 16) lines[lines.length - 1] = `${last} ${w}`;
+    if (last && (last + ' ' + w).length <= 13) lines[lines.length - 1] = `${last} ${w}`;
     else lines.push(w);
   }
-  const text = lines.slice(0, 4).map((l, i) => `<text x="400" y="${360 + i * 70 - (lines.length - 1) * 35}" font-size="60" font-family="sans-serif" font-weight="bold" fill="#fff" text-anchor="middle">${escapeXml(l)}</text>`).join('');
+  const text = lines.slice(0, 4).map((l, i) => `<text x="400" y="${360 + i * 70 - (lines.length - 1) * 35}" font-size="54" font-family="sans-serif" font-weight="bold" fill="#fff" text-anchor="middle">${escapeXml(l)}</text>`).join('');
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800"><rect width="800" height="800" fill="${color}"/><circle cx="650" cy="150" r="220" fill="#ffffff" fill-opacity="0.08"/><circle cx="120" cy="700" r="180" fill="#000000" fill-opacity="0.08"/>${text}</svg>`;
   return sharp(Buffer.from(svg)).png().toBuffer();
 }

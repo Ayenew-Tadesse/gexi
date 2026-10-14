@@ -203,6 +203,7 @@ describe('warehouse and pickup over the API', () => {
 
     const waiting = await warehouse.get('/api/warehouse/awaiting-dropoff');
     expect(waiting.body.items).toHaveLength(1);
+    expect(waiting.body.items[0]).toHaveProperty('image_url');
     expect((await warehouse.post(`/api/warehouse/items/${waiting.body.items[0].id}/receive`)).status).toBe(200);
     expect((await warehouse.post(`/api/warehouse/orders/${body.orderId}/pack`)).status).toBe(200);
     expect((await warehouse.post(`/api/warehouse/orders/${body.orderId}/send-to-pickup`)).status).toBe(200);

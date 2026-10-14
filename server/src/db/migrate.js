@@ -1,8 +1,9 @@
 // Brings the database structure up to date. With --reset it wipes everything first.
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { db } from './knex.js';
 
 const migrations = {
-  directory: new URL('./migrations/', import.meta.url).pathname,
+  directory: fileURLToPath(new URL('./migrations/', import.meta.url)),
   loadExtensions: ['.js'],
 };
 
@@ -11,7 +12,7 @@ export async function migrateLatest({ reset = false } = {}) {
   await db.migrate.latest(migrations);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const reset = process.argv.includes('--reset');
   migrateLatest({ reset })
     .then(() => console.log(reset ? 'Database reset and migrated.' : 'Database migrated.'))

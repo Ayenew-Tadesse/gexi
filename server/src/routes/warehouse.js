@@ -20,7 +20,7 @@ function itemsQuery() {
   return db('order_items')
     .join('orders', 'orders.id', 'order_items.order_id')
     .join('vendors', 'vendors.id', 'order_items.vendor_id')
-    .select(itemColumns, db.raw(
+    .select(...itemColumns, db.raw(
       '(select small_url from product_images pi where pi.product_id = order_items.product_id order by pi.sort_order, pi.id limit 1) as image_url',
     ));
 }

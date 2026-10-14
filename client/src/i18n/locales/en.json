@@ -1,0 +1,523 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "retry": "Try again",
+    "save": "Save",
+    "saved": "Saved.",
+    "edit": "Edit",
+    "remove": "Remove",
+    "view": "View",
+    "all": "All",
+    "none": "Nothing here yet.",
+    "optional": "Optional",
+    "choose": "Choose…",
+    "other": "Other",
+    "inactive": "Inactive",
+    "language": "Language",
+    "status": "Status",
+    "amount": "Amount",
+    "order": "Order",
+    "item": "Item",
+    "customer": "Customer",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {{page}} of {{pages}}",
+    "noAccess": "You don't have access to this page."
+  },
+  "nav": {
+    "main": "Main",
+    "home": "Home",
+    "shop": "Shop",
+    "search": "Search",
+    "cart": "Cart",
+    "orders": "My orders",
+    "account": "Account",
+    "login": "Log in",
+    "logout": "Log out",
+    "workspace": "Workspace",
+    "pickupInfo": "Pickup point"
+  },
+  "roles": {
+    "customer": "Customer",
+    "agent": "Seller agent",
+    "warehouse": "Warehouse",
+    "pickup": "Pickup counter",
+    "admin": "Admin"
+  },
+  "status": {
+    "pending_payment": "Waiting for payment",
+    "paid": "Paid",
+    "awaiting_dropoff": "Preparing",
+    "received_at_warehouse": "At our warehouse",
+    "packed": "Packed",
+    "ready_for_pickup": "Ready for pickup",
+    "picked_up": "Picked up",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "expired": "Not collected"
+  },
+  "itemStatus": {
+    "pending_payment": "Not paid",
+    "awaiting_dropoff": "Waiting for drop-off",
+    "received": "Received",
+    "rejected": "Failed quality check",
+    "missed_dropoff": "Not delivered by vendor",
+    "cancelled": "Cancelled",
+    "return_pending": "Return to vendor",
+    "returned_to_vendor": "Returned to vendor"
+  },
+  "productStatus": {
+    "active": "Live",
+    "draft": "Draft",
+    "hidden": "Hidden"
+  },
+  "payoutStatus": {
+    "due": "Due",
+    "paid": "Paid"
+  },
+  "refundStatus": {
+    "pending": "Pending",
+    "processed": "Refunded",
+    "failed": "Failed"
+  },
+  "refundReason": {
+    "rejected": "Failed quality check",
+    "missed_dropoff": "Vendor missed drop-off",
+    "expired": "Not collected in time",
+    "cancelled_by_admin": "Cancelled by admin",
+    "late_payment": "Paid after order timed out"
+  },
+  "payeeType": {
+    "vendor": "Vendor",
+    "agent": "Agent"
+  },
+  "home": {
+    "title": "Shop Addis, pick up nearby",
+    "subtitle": "Order online, pay with Telebirr, CBE Birr or card, and collect at our pickup point. We check every item before you get it.",
+    "howPickupWorks": "How pickup works",
+    "newArrivals": "New arrivals",
+    "seeAll": "See all"
+  },
+  "shop": {
+    "title": "Shop",
+    "searchPlaceholder": "Search products",
+    "resultsFor": "Results for “{{q}}”",
+    "all": "All",
+    "sort": "Sort",
+    "sortNewest": "Newest",
+    "sortPriceLow": "Price: low to high",
+    "sortPriceHigh": "Price: high to low",
+    "noResults": "No products found. Try another search.",
+    "loadMore": "Show more",
+    "soldOut": "Sold out",
+    "inStock": "In stock",
+    "onlyLeft": "Only {{count}} left",
+    "onlyLeft_one": "Only 1 left",
+    "onlyLeft_other": "Only {{count}} left",
+    "addToCart": "Add to cart",
+    "added": "Added to your cart",
+    "goToCart": "Go to cart",
+    "photo": "Photo",
+    "description": "Description",
+    "pickupOnlyNote": "Pickup only. No home delivery yet.",
+    "where": "Where?"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "startShopping": "Start shopping",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "summary": "Summary",
+    "items": "{{count}} items",
+    "items_one": "1 item",
+    "items_other": "{{count}} items",
+    "pickupFee": "Pickup",
+    "free": "Free",
+    "total": "Total",
+    "checkout": "Checkout",
+    "pickupOnly": "You will collect your order at our pickup point. We send you an SMS with a pickup code when it is ready."
+  },
+  "checkout": {
+    "title": "Checkout",
+    "items": "Items",
+    "pickup": "Pickup point",
+    "smsNote": "We will text {{phone}} when your order is ready, with your pickup code.",
+    "payNow": "Pay now",
+    "methods": "Telebirr · CBE Birr · Card (via Chapa)",
+    "cartUpdated": "Some items are no longer available, so we updated your cart. Please check it and pay again."
+  },
+  "payment": {
+    "checking": "Confirming your payment…",
+    "success": "Payment received",
+    "successText": "Thank you! We are now collecting your items. We will send you an SMS when your order is ready for pickup.",
+    "viewOrder": "View order",
+    "failed": "Payment did not go through",
+    "failedText": "No money was taken. You can try again.",
+    "tryAgain": "Try again",
+    "pending": "Still waiting for the payment",
+    "pendingText": "This can take a few minutes. Check your order page shortly."
+  },
+  "orders": {
+    "title": "My orders",
+    "none": "You have no orders yet."
+  },
+  "orderDetail": {
+    "notPaid": "This order is waiting for payment.",
+    "pickupCode": "Pickup code",
+    "readyText": "Your order is ready! Show this code at the pickup point before {{deadline}}.",
+    "codeNotYet": "Keep this code. We will text you when your order is ready to collect.",
+    "expiredText": "This order was not collected in time. We have refunded you (minus any fee).",
+    "cancelledText": "This order was cancelled.",
+    "refund": "Refund: ETB {{amount}}.",
+    "refundDone": "It has been sent back to you.",
+    "refundPending": "It is being processed.",
+    "progress": "Progress",
+    "items": "Items"
+  },
+  "auth": {
+    "loginTitle": "Log in",
+    "registerTitle": "Create an account",
+    "phone": "Phone number",
+    "phoneHint": "Ethiopian mobile number, e.g. 0911 223344",
+    "password": "Password",
+    "passwordHint": "At least 6 characters",
+    "name": "Full name",
+    "login": "Log in",
+    "register": "Create account",
+    "withPassword": "Password",
+    "withCode": "SMS code",
+    "sendCode": "Send me a code",
+    "codeExplain": "We will text you a 6-digit code. No password needed.",
+    "codeSentTo": "We sent a code to {{phone}}.",
+    "code": "6-digit code",
+    "verify": "Log in",
+    "changeNumber": "Use a different number",
+    "devCode": "Development mode: your code is {{code}}",
+    "noAccount": "New here?",
+    "haveAccount": "Already have an account?"
+  },
+  "account": {
+    "title": "My account",
+    "profile": "Profile",
+    "password": "Password",
+    "currentPassword": "Current password",
+    "currentPasswordHint": "Leave empty if you always log in with SMS codes",
+    "newPassword": "New password",
+    "changePassword": "Change password",
+    "saved": "Your changes are saved.",
+    "openWorkspace": "Open my workspace"
+  },
+  "pickupInfo": {
+    "title": "Pickup point",
+    "openMap": "Open in maps",
+    "howTitle": "How it works",
+    "step1": "Order and pay online.",
+    "step2": "The vendor brings your item to our warehouse, where we check its quality.",
+    "step3": "When it is ready, we send you an SMS with a 6-digit pickup code.",
+    "step4": "Come to the pickup point within {{days}} days and show your code."
+  },
+  "mockPay": {
+    "notice": "TEST PAYMENT PAGE: no real money is used. In production this is Chapa's page.",
+    "title": "Pay for your order",
+    "pay": "Pay (simulate success)",
+    "fail": "Simulate a failed payment"
+  },
+  "agent": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "vendors": "Vendors",
+      "products": "Products",
+      "orders": "Orders",
+      "earnings": "Earnings"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "vendors": "Active vendors",
+      "activeProducts": "Live products",
+      "ordersThisMonth": "Orders this month",
+      "commissionDue": "Commission due",
+      "commission": "Commission",
+      "pending": "On the way (paid, not picked up yet)",
+      "due": "Due to you",
+      "paid": "Paid to you",
+      "explain": "Commission becomes due when the customer picks up the order."
+    },
+    "vendors": {
+      "title": "My vendors",
+      "add": "Add vendor",
+      "edit": "Edit vendor",
+      "none": "You have not added any vendors yet.",
+      "name": "Vendor or shop name",
+      "phoneHint": "The vendor gets drop-off SMS on this number",
+      "location": "Location",
+      "locationHint": "e.g. Merkato, Shema Tera, shop 12",
+      "payoutMethod": "Payout method",
+      "payoutAccount": "Account / phone for payouts",
+      "active": "Active",
+      "createAndAddProduct": "Save and add a product",
+      "viewProducts": "View this vendor's products",
+      "productCount": "{{count}} products",
+      "productCount_one": "1 product",
+      "productCount_other": "{{count}} products"
+    },
+    "products": {
+      "title": "Products",
+      "add": "Add product",
+      "edit": "Edit product",
+      "create": "Create product",
+      "none": "No products yet.",
+      "vendor": "Vendor",
+      "allVendors": "All vendors",
+      "allStatuses": "All statuses",
+      "status": "Status",
+      "statusHint": "Live products are visible in the shop right away.",
+      "category": "Category",
+      "basics": "Basics",
+      "titleEn": "Title (English)",
+      "titleAm": "Title (Amharic)",
+      "price": "Price (ETB)",
+      "priceInvalid": "Enter a price greater than 0",
+      "stockQty": "In stock",
+      "stock": "{{count}} in stock",
+      "stock_one": "1 in stock",
+      "stock_other": "{{count}} in stock",
+      "photos": "Photos",
+      "addPhotos": "Add photos",
+      "photoHint": "Up to 8 photos. We shrink them automatically so they load fast on phones.",
+      "confirmRemovePhoto": "Remove this photo?",
+      "descriptions": "Description",
+      "descriptionEn": "Description (English)",
+      "descriptionAm": "Description (Amharic)",
+      "needVendor": "Add a vendor first.",
+      "viewInShop": "See it in the shop"
+    },
+    "orders": {
+      "title": "Orders",
+      "explain": "Sales of your vendors' products.",
+      "none": "No orders yet.",
+      "commission": "Commission"
+    },
+    "earnings": {
+      "title": "Earnings",
+      "none": "No commission yet. It appears here when customers pick up orders."
+    }
+  },
+  "warehouse": {
+    "title": "Warehouse",
+    "tabs": {
+      "dropoff": "Drop-offs",
+      "pack": "To pack",
+      "packed": "Packed",
+      "returns": "Returns"
+    },
+    "noDropoffs": "No items waiting for drop-off.",
+    "nothingHere": "Nothing here right now.",
+    "due": "Due {{when}}",
+    "markReceived": "Received ✓",
+    "reject": "Reject",
+    "received": "Received: {{item}}",
+    "rejected": "Rejected: {{item}}. The customer will be refunded for it.",
+    "rejectTitle": "Reject {{item}}?",
+    "rejectExplain": "The customer is refunded for this item and the vendor takes it back.",
+    "reason": "Reason",
+    "confirmReject": "Reject and refund",
+    "reasons": {
+      "damaged": "Damaged",
+      "wrongItem": "Wrong item",
+      "poorQuality": "Poor quality",
+      "notAsDescribed": "Not as described"
+    },
+    "labelHint": "Write {{order}} on the package.",
+    "markPacked": "Mark as packed",
+    "packedMsg": "{{order}} packed.",
+    "sendToPickup": "Send to pickup point",
+    "sentMsg": "{{order}} is at the pickup point. The customer has been sent their code.",
+    "returnsExplain": "Items from uncollected or cancelled orders that must go back to the vendor.",
+    "markReturned": "Returned to vendor",
+    "returnedMsg": "{{item}} returned to the vendor."
+  },
+  "pickup": {
+    "title": "Pickup counter",
+    "byCode": "Pickup code",
+    "byPhone": "Phone number",
+    "code": "Pickup code",
+    "find": "Find order",
+    "notFound": "No matching order.",
+    "collectBy": "Collect by {{when}}",
+    "alreadyCollected": "Already collected on {{when}}",
+    "notReady": "This order is not ready for pickup yet.",
+    "handOver": "Hand over order",
+    "confirmTitle": "Hand over {{order}}",
+    "confirmText": "Ask {{name}} for their 6-digit pickup code and enter it to confirm.",
+    "confirm": "Confirm handover",
+    "success": "{{order}} handed to {{name}}."
+  },
+  "admin": {
+    "nav": {
+      "overview": "Overview",
+      "orders": "Orders",
+      "payouts": "Payouts",
+      "refunds": "Refunds",
+      "reports": "Reports",
+      "users": "Users",
+      "agents": "Agents",
+      "vendors": "Vendors",
+      "products": "Products",
+      "settings": "Settings",
+      "sms": "SMS log"
+    },
+    "split": {
+      "vendor": "Vendor",
+      "agent": "Agent",
+      "platform": "Platform"
+    },
+    "overview": {
+      "title": "Overview",
+      "paidToday": "Paid today",
+      "deliveredSales": "Delivered sales (all time)",
+      "platformEarnings": "Platform earnings",
+      "payoutsDue": "Payouts due",
+      "refundsWaiting": "{{count}} refunds ({{amount}}) need attention.",
+      "ordersByStatus": "Orders by status"
+    },
+    "orders": {
+      "title": "Orders",
+      "search": "Order number, phone or name",
+      "allStatuses": "All statuses",
+      "none": "No orders found.",
+      "deadline": "Deadline",
+      "dropoff": "Drop-off by",
+      "pickup": "Pickup by"
+    },
+    "orderDetail": {
+      "pickupCode": "Pickup code",
+      "payments": "Payments",
+      "history": "History",
+      "system": "System (automatic)",
+      "cancel": "Cancel and refund",
+      "cancelTitle": "Cancel this order?",
+      "cancelExplain": "Every item still in the order is refunded. Items already at the warehouse go back to the vendor.",
+      "confirmCancel": "Cancel order"
+    },
+    "users": {
+      "title": "Users",
+      "add": "Add user",
+      "edit": "Edit user",
+      "search": "Name or phone",
+      "role": "Role",
+      "allRoles": "All roles",
+      "joined": "Joined",
+      "active": "Account active",
+      "resetPassword": "New password",
+      "resetHint": "Leave empty to keep the current password",
+      "passwordHint": "Share it with the person; they can change it later",
+      "commissionOverride": "Commission override (%)",
+      "commissionHint": "Leave empty to use the default agent %"
+    },
+    "agents": {
+      "title": "Agents",
+      "manage": "Add or edit agents",
+      "vendors": "Vendors",
+      "products": "Products",
+      "commission": "Commission",
+      "default": "Default"
+    },
+    "vendors": {
+      "title": "Vendors",
+      "search": "Vendor name or phone",
+      "agent": "Responsible agent",
+      "agentHint": "The vendor's products move to the new agent too."
+    },
+    "products": {
+      "title": "Products",
+      "search": "Search products"
+    },
+    "payouts": {
+      "title": "Payouts",
+      "explain": "Money owed to vendors and agents for orders customers have picked up. Send the money (Telebirr or bank), then mark it paid here.",
+      "payee": "Payee",
+      "allPayees": "Vendors and agents",
+      "selected": "{{count}} selected · {{amount}}",
+      "selectAll": "Select all for this payee",
+      "markPaid": "Mark as paid",
+      "confirmTitle": "Mark payouts as paid",
+      "confirmText": "Confirm you have sent {{amount}} for {{count}} payouts.",
+      "reference": "Transfer reference",
+      "referenceHint": "e.g. Telebirr transaction number",
+      "marked": "{{count}} payouts marked as paid."
+    },
+    "refunds": {
+      "title": "Refunds",
+      "explain": "Refunds are sent automatically through Chapa when possible. Pending ones need to be done by hand.",
+      "reason": "Reason",
+      "fee": "Fee kept:",
+      "markDone": "Mark as refunded",
+      "manualText": "Send the money to {{name}} ({{phone}}), then enter the transfer reference."
+    },
+    "reports": {
+      "title": "Reports",
+      "explain": "Based on orders customers have picked up.",
+      "csv": "Download CSV",
+      "type": "Report",
+      "types": {
+        "sales": "Sales over time",
+        "by-agent": "By agent",
+        "by-vendor": "By vendor",
+        "by-category": "By category"
+      },
+      "first": {
+        "sales": "Period",
+        "by-agent": "Agent",
+        "by-vendor": "Vendor",
+        "by-category": "Category"
+      },
+      "groupBy": "Group by",
+      "day": "Day",
+      "month": "Month",
+      "from": "From",
+      "to": "To",
+      "none": "No sales in this period.",
+      "orders": "Orders",
+      "units": "Units",
+      "sales": "Sales"
+    },
+    "settings": {
+      "title": "Settings",
+      "split": "Money split",
+      "splitExplain": "How each sale is divided. Applies to new orders only; existing orders keep their split.",
+      "sum": "Total: {{sum}}% (must be 100%)",
+      "timing": "Time limits",
+      "dropoffHours": "Drop-off window (hours)",
+      "dropoffHint": "Vendor must bring the item within this time after payment",
+      "pickupDays": "Pickup window (days)",
+      "pickupHint": "Customer must collect within this time",
+      "expiryFee": "Fee if not collected (ETB)",
+      "expiryFeeHint": "Kept from the refund when an order expires",
+      "paymentTimeout": "Unpaid order timeout (minutes)",
+      "reminderHours": "Pickup reminder (hours before deadline)",
+      "location": "Pickup location",
+      "locationName": "Name",
+      "address": "Address / directions",
+      "hours": "Opening hours",
+      "mapUrl": "Map link",
+      "categories": "Categories",
+      "nameEn": "Name (English)",
+      "nameAm": "Name (Amharic)",
+      "addCategory": "Add category"
+    },
+    "sms": {
+      "title": "SMS log",
+      "explain": "Every text message the system has sent. In development, messages are only printed here and in the terminal.",
+      "search": "Filter by phone number"
+    }
+  },
+  "dev": {
+    "banner": "Development mode",
+    "title": "Test tools",
+    "explain": "Move the clock forward to test deadlines (missed drop-off after 48h, pickup reminder, expiry after 7 days). Only available in development.",
+    "now": "App time: {{now}} (offset {{offset}} h)",
+    "reset": "Back to real time",
+    "result": "Cancelled unpaid: {{unpaidCancelled}} · Missed drop-off: {{missedDropoff}} · Reminders: {{reminders}} · Expired: {{expired}}"
+  }
+}

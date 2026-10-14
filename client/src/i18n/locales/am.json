@@ -1,0 +1,31 @@
+{
+  "_note": "Starter Amharic text. Please have a native speaker review it. Any key missing here falls back to English. Run `npm run i18n:check` to list what still needs translating.",
+  "common": {
+    "language": "ቋንቋ",
+    "save": "አስቀምጥ",
+    "loading": "በመጫን ላይ…"
+  },
+  "nav": {
+    "home": "መነሻ",
+    "shop": "ገበያ",
+    "cart": "ጋሪ",
+    "orders": "ትዕዛዞቼ",
+    "account": "መለያ",
+    "login": "ግባ",
+    "logout": "ውጣ"
+  },
+  "shop": {
+    "addToCart": "ወደ ጋሪ ጨምር",
+    "soldOut": "ተሽጦ አልቋል"
+  },
+  "cart": {
+    "total": "ጠቅላላ"
+  },
+  "auth": {
+    "phone": "ስልክ ቁጥር",
+    "password": "የይለፍ ቃል"
+  },
+  "status": {
+    "ready_for_pickup": "ለመውሰድ ዝግጁ"
+  }
+}

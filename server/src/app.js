@@ -1,4 +1,5 @@
 // Builds the Express app: security headers, compression, routes and error handling.
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import fs from 'node:fs';
 import express from 'express';
@@ -46,7 +47,7 @@ export function createApp() {
   app.use('/api', api);
 
   // In production the server also serves the built React app.
-  const dist = new URL('../../client/dist/', import.meta.url).pathname;
+  const dist = fileURLToPath(new URL('../../client/dist/', import.meta.url));
   if (config.isProduction && fs.existsSync(dist)) {
     app.use('/assets', express.static(path.join(dist, 'assets'), { maxAge: '365d', immutable: true }));
     app.use(express.static(dist, { maxAge: '1h' }));

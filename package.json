@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "description": "Pickup-only marketplace for Addis Ababa",
-  "workspaces": ["server", "client"],
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
     "setup": "npm run db:migrate -w server && npm run db:seed -w server",
     "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
@@ -13,6 +16,6 @@
     "i18n:check": "node client/scripts/i18n-check.mjs"
   },
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.2.5"
   }
 }
