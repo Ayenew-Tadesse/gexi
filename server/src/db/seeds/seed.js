@@ -1,19 +1,17 @@
 // Sample data so you can click around immediately.
-// ⚠️  This WIPES the database and starts fresh every time you run it.
+// ⚠️  Running this file WIPES the database and starts fresh:  npm run setup
+// The online demo (DEMO_MODE=true) also loads it automatically when the database is empty.
 //
 // All sample accounts use the password:  password123
-process.env.SMS_CONSOLE_QUIET = '1';
-
-const { db } = await import('../knex.js');
-const { migrateLatest } = await import('../migrate.js');
-const { clock, DAY, HOUR } = await import('../../lib/clock.js');
-const { hashPassword } = await import('../../services/auth.js');
-const { saveProductImage } = await import('../../services/images.js');
-const orders = await import('../../services/orders.js');
-const { markPayoutsPaid } = await import('../../services/payouts.js');
-const { config } = await import('../../config.js');
-const fs = await import('node:fs/promises');
-const sharp = (await import('sharp')).default;
+import { pathToFileURL } from 'node:url';
+import sharp from 'sharp';
+import { db } from '../knex.js';
+import { migrateLatest } from '../migrate.js';
+import { clock, DAY, HOUR } from '../../lib/clock.js';
+import { hashPassword } from '../../services/auth.js';
+import { saveProductImage } from '../../services/images.js';
+import * as orders from '../../services/orders.js';
+import { markPayoutsPaid } from '../../services/payouts.js';
 
 const PASSWORD = 'password123';
 
@@ -91,10 +89,12 @@ async function placeholderImage(title, color) {
   return sharp(Buffer.from(svg)).png().toBuffer();
 }
 
-async function run() {
-  console.log('🧹 Resetting database…');
-  await migrateLatest({ reset: true });
-  await fs.rm(config.uploadDir, { recursive: true, force: true });
+export async function seedDemoData({ reset = true } = {}) {
+  process.env.SMS_CONSOLE_QUIET = '1';
+  if (reset) {
+    console.log('🧹 Resetting database…');
+    await migrateLatest({ reset: true });
+  }
   clock.reset();
 
   console.log('👤 Users…');
@@ -248,8 +248,12 @@ async function run() {
   console.table(USERS.map((u) => ({ role: u.role, name: u.name, phone: u.phone.replace('+251', '0') })));
   console.log('Orders ready for pickup (use these codes on the pickup screen):');
   console.table(codes);
+  delete process.env.SMS_CONSOLE_QUIET;
 }
 
-run()
-  .catch((err) => { console.error(err); process.exitCode = 1; })
-  .finally(() => db.destroy());
+// Running "node seed.js" directly (npm run setup / db:seed)
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  seedDemoData()
+    .catch((err) => { console.error(err); process.exitCode = 1; })
+    .finally(() => db.destroy());
+}

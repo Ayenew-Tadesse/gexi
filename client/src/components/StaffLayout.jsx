@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useNavigate } from 'react-router';
 import { useT } from '../i18n/index.jsx';
 import { useAuth } from '../lib/auth.jsx';
 import { LanguageSwitch } from './CustomerLayout.jsx';
+import DemoBanner from './DemoBanner.jsx';
 
 export default function StaffLayout({ links, title }) {
   const { t } = useT();
@@ -10,7 +11,7 @@ export default function StaffLayout({ links, title }) {
   const navigate = useNavigate();
   return (
     <div>
-      {import.meta.env.DEV && <div className="dev-bar">{t('dev.banner')}</div>}
+      <DemoBanner />
       <header className="staff-header">
         <div className="app-header-inner">
           <Link to="/" className="logo">Gexi</Link>

@@ -9,6 +9,7 @@ import cookieParser from 'cookie-parser';
 import { config } from './config.js';
 import { loadUser } from './middleware/auth.js';
 import { AppError } from './lib/errors.js';
+import { readStoredFile } from './services/images.js';
 import authRoutes from './routes/auth.js';
 import catalogRoutes from './routes/catalog.js';
 import customerRoutes from './routes/customer.js';
@@ -29,8 +30,14 @@ export function createApp() {
   app.use(cookieParser());
   app.use(loadUser);
 
-  // Uploaded product photos: cache for a year (file names never change).
-  app.use('/uploads', express.static(config.uploadDir, { maxAge: '365d', immutable: true }));
+  // Uploaded product photos (kept in the database). Cached by phones for a year: file names never change.
+  app.get(/^\/uploads\/(.+)$/, async (req, res) => {
+    const file = await readStoredFile(req.params[0]);
+    if (!file) return res.status(404).end();
+    res.set('Content-Type', file.content_type);
+    res.set('Cache-Control', 'public, max-age=31536000, immutable');
+    res.send(file.data);
+  });
 
   const api = express.Router();
   api.get('/health', (_req, res) => res.json({ ok: true }));

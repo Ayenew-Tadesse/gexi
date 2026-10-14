@@ -121,6 +121,26 @@ describe('agent listings', () => {
     expect(edit.body.product).toMatchObject({ price_santim: 55000, title_am: 'ሞሶብ', status: 'draft' });
   });
 
+  it('stores uploaded photos as small WebP files and serves them', async () => {
+    const { vendor, products, agent: agentUser } = await makeCatalog([10000]);
+    const agent = await loginAs(agentUser);
+    const sharp = (await import('sharp')).default;
+    const png = await sharp({ create: { width: 900, height: 600, channels: 3, background: '#2f6f5e' } }).png().toBuffer();
+    const res = await agent.post(`/api/agent/products/${products[0].id}/images`).attach('image', png, 'photo.png');
+    expect(res.status).toBe(201);
+    expect(res.body.image.small_url).toMatch(/^\/uploads\/products\/.+-small\.webp$/);
+    const file = await request(app).get(res.body.image.small_url);
+    expect(file.status).toBe(200);
+    expect(file.headers['content-type']).toBe('image/webp');
+    expect(file.headers['cache-control']).toContain('immutable');
+    expect((await sharp(file.body).metadata()).width).toBe(320);
+    expect((await request(app).get('/uploads/products/missing.webp')).status).toBe(404);
+    expect(vendor.id).toBeTruthy();
+
+    await agent.delete(`/api/agent/products/${products[0].id}/images/${res.body.image.id}`);
+    expect((await request(app).get(res.body.image.small_url)).status).toBe(404);
+  });
+
   it('draft products are not visible in the shop', async () => {
     const { products } = await makeCatalog([10000, 20000]);
     await db('products').where({ id: products[1].id }).update({ status: 'draft' });

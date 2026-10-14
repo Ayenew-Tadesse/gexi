@@ -1,0 +1,43 @@
+# Render "Blueprint": tells Render how to run Gexi online (website + database).
+# Render reads this file when you click "New → Blueprint" in the Render dashboard.
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: gexi
+    runtime: node
+    plan: free                 # free plan sleeps after 15 min without visitors (first visit then takes ~1 min)
+    region: frankfurt          # closest Render region to Addis Ababa
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gexi-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true    # Render creates a long random secret for logins
+      # Demo site: fake payment page, test tools, SMS codes shown on screen, sample data on first start.
+      # For the real shop: set DEMO_MODE to "false", PAYMENT_PROVIDER to "chapa" and fill in CHAPA_SECRET_KEY.
+      - key: DEMO_MODE
+        value: "true"
+      - key: PAYMENT_PROVIDER
+        value: mock
+      - key: SMS_PROVIDER
+        value: console
+      - key: CHAPA_SECRET_KEY
+        sync: false            # Render asks you for this value (leave empty for the demo)
+      - key: CHAPA_WEBHOOK_SECRET
+        sync: false
+
+databases:
+  - name: gexi-db
+    plan: free                 # Render's free database expires after 30 days; upgrade it before then to keep your data
+    region: frankfurt
+    databaseName: gexi
+    user: gexi

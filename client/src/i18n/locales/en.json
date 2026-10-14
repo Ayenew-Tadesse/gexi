@@ -218,7 +218,7 @@
     "step4": "Come to the pickup point within {{days}} days and show your code."
   },
   "mockPay": {
-    "notice": "TEST PAYMENT PAGE: no real money is used. In production this is Chapa's page.",
+    "notice": "TEST PAYMENT PAGE: no real money is used. The real shop uses Chapa here.",
     "title": "Pay for your order",
     "pay": "Pay (simulate success)",
     "fail": "Simulate a failed payment"
@@ -518,6 +518,7 @@
     "explain": "Move the clock forward to test deadlines (missed drop-off after 48h, pickup reminder, expiry after 7 days). Only available in development.",
     "now": "App time: {{now}} (offset {{offset}} h)",
     "reset": "Back to real time",
-    "result": "Cancelled unpaid: {{unpaidCancelled}} · Missed drop-off: {{missedDropoff}} · Reminders: {{reminders}} · Expired: {{expired}}"
+    "result": "Cancelled unpaid: {{unpaidCancelled}} · Missed drop-off: {{missedDropoff}} · Reminders: {{reminders}} · Expired: {{expired}}",
+    "demoBanner": "Demo site: payments are simulated and no real money is used. SMS messages are not really sent."
   }
 }

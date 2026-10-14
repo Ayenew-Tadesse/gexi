@@ -9,7 +9,7 @@ export const app = createApp();
 
 export async function resetDb() {
   clock.reset();
-  const tables = ['sms_log', 'settings', 'payouts', 'refunds', 'payments', 'order_status_history', 'order_items', 'orders',
+  const tables = ['stored_files', 'sms_log', 'settings', 'payouts', 'refunds', 'payments', 'order_status_history', 'order_items', 'orders',
     'product_images', 'products', 'categories', 'vendors', 'agent_profiles', 'otp_codes', 'users'];
   await db.raw(`TRUNCATE ${tables.join(', ')} RESTART IDENTITY CASCADE`);
 }

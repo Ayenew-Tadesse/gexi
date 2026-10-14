@@ -4,6 +4,7 @@ import { db } from '../db/knex.js';
 import { idParam, pageParams, paginate, likeTerm } from '../lib/http.js';
 import { notFound } from '../lib/errors.js';
 import { getSettings, PUBLIC_SETTING_KEYS } from '../services/settings.js';
+import { config } from '../config.js';
 
 const router = Router();
 
@@ -59,7 +60,7 @@ router.get('/products/:id', async (req, res) => {
 
 router.get('/settings/public', async (_req, res) => {
   const settings = await getSettings();
-  res.json(Object.fromEntries(PUBLIC_SETTING_KEYS.map((k) => [k, settings[k]])));
+  res.json({ ...Object.fromEntries(PUBLIC_SETTING_KEYS.map((k) => [k, settings[k]])), demo_mode: config.demoMode });
 });
 
 export default router;

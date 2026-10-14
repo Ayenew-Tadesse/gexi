@@ -5,6 +5,7 @@ import { useT, LANGUAGES } from '../i18n/index.jsx';
 import { useCart } from '../lib/cart.js';
 import { useAuth, HOME_FOR_ROLE } from '../lib/auth.jsx';
 import { HomeIcon, SearchIcon, CartIcon, UserIcon } from './icons.jsx';
+import DemoBanner from './DemoBanner.jsx';
 
 export function LanguageSwitch({ className = 'select', style }) {
   const { lang, setLang, t } = useT();
@@ -29,6 +30,7 @@ export default function CustomerLayout() {
 
   return (
     <div className="page-with-bottom-nav">
+      <DemoBanner />
       <header className="app-header">
         <div className="app-header-inner">
           <Link to="/" className="logo">Gexi</Link>

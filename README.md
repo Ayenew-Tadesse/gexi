@@ -81,6 +81,10 @@ Open **http://localhost:5173** in your browser. To stop the app, press `Ctrl + C
 
 Tip: in Chrome, press `F12` → click the phone icon to see the mobile layout, and choose "Slow 3G" under *Network* to feel what it's like on a weak connection.
 
+## Put it online (share a link)
+
+To get a public web address you can open on your phone or send to others, follow **[docs/DEPLOY.md](docs/DEPLOY.md)**. It uses Render's free plan and takes about 15 minutes, with no coding.
+
 ---
 
 ## Sample accounts
@@ -183,7 +187,7 @@ The reusable React components (`Button`, `Input`, `Card`, `Badge`, `StatusBadge`
 ## Speed on slow connections
 
 - Customers download about **97 KB** of compressed JavaScript on first visit. Agent, staff and admin code is never sent to customers.
-- Photos are converted to WebP in three sizes (320 / 640 / 1200 px) on upload, so phones only download the size they need. Images lazy-load.
+- Photos are converted to WebP in three sizes (320 / 640 / 1200 px) on upload and stored in the database, so phones only download the size they need. Images lazy-load.
 - The cart is kept on the phone, so adding items doesn't need a connection.
 - In production, files are compressed and cached by the phone for a year.
 - System fonts only (no font downloads). `Noto Sans Ethiopic` covers Amharic on Android.
